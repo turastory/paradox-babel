@@ -44,9 +44,13 @@ Paradox Babel은 이런 문제를 해결하기 위해 만들어졌습니다. 유
 
 #### Client
 
+- Rust, Tauri
+
 많은 기능이 필요하지 않습니다. 번역 파일 위치를 찾고, 번역 동기화 상태를 스트리밍받는 정도면 충분합니다. 게임에 영향을 주지 않도록 경량화된 클라이언트 구현을 위해 Electron이 아닌 Rust기반의 Tauri를 사용합니다.
 
 #### Server
+
+- Nest.js, Postgres(pgvector for RAG), Redis
 
 I/O 처리에 유리한 Node.js 기반의 서버입니다. 클라이언트에서 들어오는 번역 요청을 처리하고, 비용 효율을 위해 한 번 번역했던 데이터는 저장해둔 다음 내려줍니다.
 
